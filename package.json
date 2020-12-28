@@ -1,0 +1,37 @@
+{
+  "name": "data-store",
+  "version": "1.0.0",
+  "description": "A key-value data store that supports CRD with thread-safe functionalities.",
+  "main": "server.js",
+  "scripts": {
+    "dev": " ./node_modules/.bin/nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theWellHopeErr/data-store.git"
+  },
+  "keywords": [
+    "data-store",
+    "key-value",
+    "create",
+    "read",
+    "delete",
+    "thread-safe"
+  ],
+  "author": "theWellHopeErr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theWellHopeErr/data-store/issues"
+  },
+  "homepage": "https://github.com/theWellHopeErr/data-store#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.6"
+  }
+}
