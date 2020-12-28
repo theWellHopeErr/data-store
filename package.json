@@ -20,6 +20,11 @@
     "delete",
     "thread-safe"
   ],
+  "nodemonConfig": {
+    "ignore": [
+      "data-store.json"
+    ]
+  },
   "author": "theWellHopeErr",
   "license": "ISC",
   "bugs": {
