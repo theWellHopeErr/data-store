@@ -23,7 +23,6 @@ Using npm: `npm i`
 Create .env file with following
 
     - PORT=3000
-    - NODE_ENV=development
     - DATA_STORE_PATH=.
 
 `DATA_STORE_PATH` is the path for the `data-store.json` file.
