@@ -66,6 +66,14 @@ app.post("/create", (req, res) => {
     return;
   }
 
+  // Check whether ttl is an integer
+  if (!ttl ^ isNaN(parseInt(ttl))) {
+    res.status(400).send({
+      message: "ttl should be an integer.",
+    });
+    return;
+  }
+
   // Check for value size (<= 16KB)
   if (getJSONSizeInKB(value) > 16) {
     res.status(400).send({
@@ -132,6 +140,11 @@ app.get("/read", (req, res) => {
         res.status(200).send({
           key,
           value,
+        });
+        return;
+      } else {
+        res.status(401).send({
+          message: "Key expired",
         });
         return;
       }
