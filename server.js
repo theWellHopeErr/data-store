@@ -16,11 +16,7 @@ const FILE_PATH = `${process.env.DATA_STORE_PATH}/data-store.json`;
 const PORT = process.env.PORT || 8080;
 
 // Morgan log configuration
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-} else {
-  app.use(morgan("combined"));
-}
+app.use(morgan("dev"));
 
 //Endpoint for POST /create
 //To append key-value pair to data-store file
@@ -187,6 +183,11 @@ app.delete("/delete", (req, res) => {
           res.status(201).send({
             message: `Data Removed from Data Store`,
           });
+        });
+        return;
+      } else {
+        res.status(401).send({
+          message: "Key expired",
         });
         return;
       }
